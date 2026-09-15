@@ -1,5 +1,5 @@
 object camion {
-    var esPeligrosa = true
+    //var esPeligrosa = true
     var pesoCarga = 0
     var cargas =[]
     // peso maximo 2500
