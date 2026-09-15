@@ -25,5 +25,31 @@ object paqueteDeLadrillos{
 
 object arenaAGranel{
     var peso = 1
+    method nivelPeligrosidad = 1
+}
+
+object bateriaAntiAerea{
+    var peso = 200
+    var estaArmada = false
+    var nivelPeligrosidad = 0
+    
+    method peso() = peso 
+}
+
+object contenedor{
+    var listaDeCosas = []
+
+    method peso() = 100  ///
+}
+
+object residuosRadiactivos{
+    var peso = x
+    var nivelPeligrosidad = 200 
+}
+
+object embalaje{
+    method embarlar (unaCosa){
+        
+    }
     
 }
