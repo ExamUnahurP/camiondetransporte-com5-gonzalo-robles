@@ -38,8 +38,10 @@ object bateriaAntiAerea{
 
 object contenedor{
     var listaDeCosas = []
+    method agregarCosas(unaCosa) {listaDeCosas.add(unaCosa)}
+    method peso() = 100 + listaDeCosas.sum({c=>c.peso()})
+    method nivelPeligrosidad() = 0: listaDeCosas.max({c=>c.nivelPeligrosidad()}) 
 
-    method peso() = 100  ///
 }
 
 object residuosRadiactivos{
@@ -49,9 +51,8 @@ object residuosRadiactivos{
 
 object embalaje{
     var cosa 
-    
-    method embalar (unaCosa){
-        cosa = unaCosa
-    }
+     
+    method embalar (unaCosa){ cosa = unaCosa }
     method nivelPeligrosidad() = cosa.nivelPeligrosidad()/2
+    method peso() = cosa.peso()
 }
