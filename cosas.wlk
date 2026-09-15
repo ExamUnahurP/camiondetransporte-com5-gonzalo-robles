@@ -24,7 +24,8 @@ object paqueteDeLadrillos{
 }
 
 object arenaAGranel{
-    var peso = 1
+    var peso 
+    method modificarPeso(unaCantidad) = { peso = unaCantidad } 
     method nivelPeligrosidad = 1
 }
 
@@ -33,15 +34,19 @@ object bateriaAntiAerea{
     var estaArmada = false
     var nivelPeligrosidad = 0
     
-    method peso() = peso 
+    method peso() = estaArmada ? 200 : 300
+
+    method agregarMisiles() { estaArmada = true }
+    method quitarMisiles() { estaArmada = false }
+    method nivelPeligrosidad() = estaArmada ? 100 : 0
 }
 
 object contenedor{
     var listaDeCosas = []
     method agregarCosas(unaCosa) {listaDeCosas.add(unaCosa)}
     method peso() = 100 + listaDeCosas.sum({c=>c.peso()})
-    method nivelPeligrosidad() = 0: listaDeCosas.max({c=>c.nivelPeligrosidad()}) 
-
+    method nivelPeligrosidad() = 
+         listaDeCosas.size() ? 0 :listaDeCosas.max({c=>c.nivelPeligrosidad()}) 
 }
 
 object residuosRadiactivos{
