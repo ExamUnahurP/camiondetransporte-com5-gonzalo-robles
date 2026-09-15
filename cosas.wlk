@@ -48,8 +48,10 @@ object residuosRadiactivos{
 }
 
 object embalaje{
-    method embarlar (unaCosa){
-        
-    }
+    var cosa 
     
+    method embalar (unaCosa){
+        cosa = unaCosa
+    }
+    method nivelPeligrosidad() = cosa.nivelPeligrosidad()/2
 }

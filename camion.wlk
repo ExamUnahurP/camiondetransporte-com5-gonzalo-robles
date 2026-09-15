@@ -14,7 +14,3 @@ object camion {
 
 // cosas que puede descargar
 
-object Knigth{
-    var peso = 500
-    method peso()
-}
