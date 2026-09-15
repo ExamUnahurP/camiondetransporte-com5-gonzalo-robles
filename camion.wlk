@@ -1,4 +1,4 @@
-
+import cosas.*
 object camion {
     //var esPeligrosa = true
     var pesoCarga = 0
@@ -6,7 +6,7 @@ object camion {
     var listaQueSuperaNiveles = []
 
     method cargarCosas(unaCosa){cosas.add(unaCosa)}
-    method descargar(unaCosa){}
+    method descargar(unaCosa){cosas.contains(unaCosa).remove()}
 
     method peso() = 1000 + cosas.sum({c=>c.peso()})
     
@@ -20,7 +20,6 @@ object camion {
     method mostrarListaQueSuperan()= nivelPeligrosidad
     method estaExcedido() = self.peso() >= 2500
 
-    method puedeCircular() = self.estaExcedido() && self.mostrarListaQueSuperan
+    method puedeCircular() = self.estaExcedido() && (listaQueSuperaNiveles.size()>0) ? false : true 
 }
 
-// cosas que puede descargar
