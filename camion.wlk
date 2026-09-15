@@ -15,8 +15,12 @@ object camion {
     method nivelPeligrosidadDelBuscado(unNivel) = cosas.findOrElse({c=>c.nivelPeligrosidad() == unNivel}, 0)
     
     method superanNivel(unNivel) {
-       listaQueSuperaNiveles = cosas.map({c=>c.nivelPeligrosidad() > unNivel })}
+        listaQueSuperaNiveles =cosas.map({c=>c.nivelPeligrosidad() > unNivel })
+    }
+    method mostrarListaQueSuperan()= nivelPeligrosidad
+    method estaExcedido() = self.peso() >= 2500
 
+    method puedeCircular() = self.estaExcedido() && self.mostrarListaQueSuperan
 }
 
 // cosas que puede descargar
