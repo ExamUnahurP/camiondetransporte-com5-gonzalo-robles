@@ -3,8 +3,8 @@ object camion {
     //var esPeligrosa = true
     var pesoCarga = 0
     var cosas =[]
-    // peso maximo 2500
-    // 
+    var listaQueSuperaNiveles = []
+
     method cargarCosas(unaCosa){cosas.add(unaCosa)}
     method descargar(unaCosa){}
 
@@ -12,10 +12,11 @@ object camion {
     
     method sonPares() = cosas.all({ c=>c.peso()%2 == 0})
     method pesaValor(unValor) = cosas.all({c=>c.peso()== unValor})
-    method nivelPeligrosidadDelPrimero(unNivel) = cosas.find({c=>c.nivelPeligrosidad() == unNivel})
-
+    method nivelPeligrosidadDelBuscado(unNivel) = cosas.findOrElse({c=>c.nivelPeligrosidad() == unNivel}, 0)
+    
+    method superanNivel(unNivel) {
+       listaQueSuperaNiveles = cosas.map({c=>c.nivelPeligrosidad() > unNivel })}
 
 }
 
 // cosas que puede descargar
-
