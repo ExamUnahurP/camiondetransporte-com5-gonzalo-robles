@@ -20,6 +20,6 @@ object camion {
     method mostrarListaQueSuperan()= nivelPeligrosidad
     method estaExcedido() = self.peso() >= 2500
 
-    method puedeCircular() = self.estaExcedido() && (listaQueSuperaNiveles.size()>0) ? false : true 
+    method puedeCircular() = ! self.estaExcedido() and (listaQueSuperaNiveles.size()>0) ? false : true 
 }
 
